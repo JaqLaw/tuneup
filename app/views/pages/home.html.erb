@@ -1,1 +1,129 @@
-TuneUp
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>TuneUp</title>
+  </head>
+  <body>
+    <div class="container p-5 my-5 bg-dark text-white">
+      <h1 class="text-center">TuneUp</h1>
+
+      <form id="recommendation-form">
+        <div class="mb-3">
+          <label for="input-query" class="form-label">Enter a song or an artist:</label>
+          <input type="text" class="form-control" id="input-query" required/>
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Select recommendation type:</label>
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="radio"
+              name="recommendation-type"
+              id="radio-song"
+              value="song"
+              checked
+            />
+            <label class="form-check-label" for="radio-song">
+              Song
+            </label>
+          </div>
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="radio"
+              name="recommendation-type"
+              id="radio-artist"
+              value="artist"
+            />
+            <label class="form-check-label" for="radio-artist">
+              Artist
+            </label>
+          </div>
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Select matching options:</label>
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="checkbox"
+              name="options[]"
+              id="checkbox-mood"
+              value="mood"
+            />
+            <label class="form-check-label" for="checkbox-mood">
+              Mood
+            </label>
+          </div>
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="checkbox"
+              name="options[]"
+              id="checkbox-tempo"
+              value="tempo"
+            />
+            <label class="form-check-label" for="checkbox-tempo">
+              Tempo
+            </label>
+          </div>
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="checkbox"
+              name="options[]"
+              id="checkbox-genre"
+              value="genre"
+            />
+            <label class="form-check-label" for="checkbox-genre">
+              Genre
+            </label>
+          </div>
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="checkbox"
+              name="options[]"
+              id="checkbox-style"
+              value="style"
+            />
+            <label class="form-check-label" for="checkbox-style">
+              Style
+            </label>
+          </div>
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="checkbox"
+              name="options[]"
+              id="checkbox-instrumentation"
+              value="instrumentation"
+            />
+            <label class="form-check-label" for="checkbox-instrumentation">
+              Instrumentation
+            </label>
+          </div>
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="checkbox"
+              name="options[]"
+              id="checkbox-theme"
+              value="theme"
+            />
+            <label class="form-check-label" for="checkbox-theme">
+              Theme
+            </label>
+          </div>
+        </div>
+        <button type="submit" class="btn btn-primary">
+          Get Recommendations
+        </button>
+      </form>
+
+      <div id="recommendations-result"></div>
+    </div>
+
+  </body>
+</html>
