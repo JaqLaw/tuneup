@@ -3,6 +3,9 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby "3.2.2"
 
+# openai library
+gem "ruby-openai"
+
 # bootstrap
 gem "bootstrap", "~> 5.1.3"
 
@@ -77,6 +80,6 @@ group :test do
   gem "webdrivers"
 end
 
-group :production do
-  gem "pg"
-end
+# group :production do
+#   gem "pg"
+# end
