@@ -6,10 +6,12 @@ body {
     -o-background-size: cover;
   }
 
-.btn, .btn-primary, .btn-primary:active, .btn-primary:visited {
+.btn, .btn-primary {
     background-color: #a56dc1 !important;
 }
 
-.btn-primary:hover {
-    background-color: #ffffff !important;
+/* these are not working... */
+.btn-primary:hover, .btn-primary:active, .btn-primary:focus, .btn-primary:visited, .btn-primary:active:focus {
+    background-color: #a6acec !important;
+    border-color: lightgray !important;
 }

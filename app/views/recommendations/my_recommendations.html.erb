@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>TuneUp</title>
+  </head>
+  <body>
+    <div class="row">
+      <div class="col"></div>
+      <div class="col">
+        <div class="container p-5 my-5 bg-dark text-white">
+          <img src="https://i.ibb.co/1Yg1ncM/tuneup.png" class="img-fluid">
+          <div class="card card-header">
+            <%= simple_format @recommendations %>
+            <%= link_to("Start Over", root_path, class: "btn btn-outline-dark") %>
+          </div>
+        </div>
+      </div>
+      <div class="col"></div>
+    </div>
+
+  </body>
+</html>

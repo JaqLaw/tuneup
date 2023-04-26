@@ -11,120 +11,80 @@
       <div class="col">
         <div class="container p-5 my-5 bg-dark text-white">
           <img src="https://i.ibb.co/1Yg1ncM/tuneup.png" class="img-fluid">
-          <form id="recommendation-form">
+          <%= form_tag recommendations_path, method: :get do %>
             <div class="mb-3">
-              <label for="input-query" class="form-label">Enter a song or an artist:</label>
-              <input type="text" class="form-control" id="input-query" required/>
+              <%= label_tag("input-query", "Enter a song or an artist:", class: "form-label") %>
+              <%= text_field_tag(
+                :query,
+                nil,
+                class: "form-control",
+                required: true,
+                maxlength: 50
+              ) %>
             </div>
             <div class="mb-3">
-              <label class="form-label">Select recommendation type:</label>
+              <%= label_tag(
+                "recommendation-type",
+                "Select recommendation type:",
+                class: "form-label"
+              ) %>
               <div class="form-check">
-                <input
-                  class="form-check-input"
-                  type="radio"
-                  name="recommendation-type"
-                  id="radio-song"
-                  value="song"
-                  checked
-                />
-                <label class="form-check-label" for="radio-song">
-                  Song
-                </label>
+                <%= radio_button_tag(
+                  :recommendation_type,
+                  "song",
+                  checked = true,
+                  class: "form-check-input"
+                ) %>
+                <%= label_tag("radio-song", "Song", class: "form-check-label") %>
               </div>
               <div class="form-check">
-                <input
-                  class="form-check-input"
-                  type="radio"
-                  name="recommendation-type"
-                  id="radio-artist"
-                  value="artist"
-                />
-                <label class="form-check-label" for="radio-artist">
-                  Artist
-                </label>
+                <%= radio_button_tag(
+                  :recommendation_type,
+                  "artist",
+                  checked = false,
+                  class: "form-check-input"
+                ) %>
+                <%= label_tag("radio-artist", "Artist", class: "form-check-label") %>
               </div>
             </div>
             <div class="mb-3">
-              <label class="form-label">Select matching options:</label>
+              <%= label_tag("options", "Select matching options:", class: "form-label") %>
               <div class="form-check">
-                <input
-                  class="form-check-input"
-                  type="checkbox"
-                  name="options[]"
-                  id="checkbox-mood"
-                  value="mood"
-                />
-                <label class="form-check-label" for="checkbox-mood">
-                  Mood
-                </label>
+                <%= check_box_tag("options[]", "mood", checked = false, class: "form-check-input") %>
+                <%= label_tag("checkbox-mood", "Mood", class: "form-check-label") %>
               </div>
               <div class="form-check">
-                <input
-                  class="form-check-input"
-                  type="checkbox"
-                  name="options[]"
-                  id="checkbox-tempo"
-                  value="tempo"
-                />
-                <label class="form-check-label" for="checkbox-tempo">
-                  Tempo
-                </label>
+                <%= check_box_tag("options[]", "tempo", checked = false, class: "form-check-input") %>
+                <%= label_tag("checkbox-tempo", "Tempo", class: "form-check-label") %>
               </div>
               <div class="form-check">
-                <input
-                  class="form-check-input"
-                  type="checkbox"
-                  name="options[]"
-                  id="checkbox-genre"
-                  value="genre"
-                />
-                <label class="form-check-label" for="checkbox-genre">
-                  Genre
-                </label>
+                <%= check_box_tag("options[]", "genre", checked = false, class: "form-check-input") %>
+                <%= label_tag("checkbox-genre", "Genre", class: "form-check-label") %>
               </div>
               <div class="form-check">
-                <input
-                  class="form-check-input"
-                  type="checkbox"
-                  name="options[]"
-                  id="checkbox-style"
-                  value="style"
-                />
-                <label class="form-check-label" for="checkbox-style">
-                  Style
-                </label>
+                <%= check_box_tag("options[]", "style", checked = false, class: "form-check-input") %>
+                <%= label_tag("checkbox-style", "Style", class: "form-check-label") %>
               </div>
               <div class="form-check">
-                <input
-                  class="form-check-input"
-                  type="checkbox"
-                  name="options[]"
-                  id="checkbox-instrumentation"
-                  value="instrumentation"
-                />
-                <label class="form-check-label" for="checkbox-instrumentation">
-                  Instrumentation
-                </label>
+                <%= check_box_tag(
+                  "options[]",
+                  "instrumentation",
+                  checked = false,
+                  class: "form-check-input"
+                ) %>
+                <%= label_tag(
+                  "checkbox-instrumentation",
+                  "Instrumentation",
+                  class: "form-check-label"
+                ) %>
               </div>
               <div class="form-check">
-                <input
-                  class="form-check-input"
-                  type="checkbox"
-                  name="options[]"
-                  id="checkbox-theme"
-                  value="theme"
-                />
-                <label class="form-check-label" for="checkbox-theme">
-                  Theme
-                </label>
+                <%= check_box_tag("options[]", "theme", checked = false, class: "form-check-input") %>
+                <%= label_tag("checkbox-theme", "Theme", class: "form-check-label") %>
               </div>
             </div>
-            <button type="submit" class="btn btn-outline-dark">
-              Get Recommendations
-            </button>
-          </form>
-
-          <div id="recommendations-result"></div>
+            <%= submit_tag("Get Recommendations", class: "btn btn-outline-dark") %>
+          <% end %>
         </div>
       </div>
       <div class="col"></div>
