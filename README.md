@@ -1,24 +1,9 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Tuneup - AI Music Guru
 
-Things you may want to cover:
+Are you in a music rut?
 
-* Ruby version
+This app calls chat-gpt to get you song or artist recommendations based on your input!
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Written in Ruby on Rails 7
