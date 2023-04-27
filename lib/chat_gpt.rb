@@ -20,6 +20,6 @@ module OpenAIApiService
         }
       )
 
-    object = JSON.parse(response)
+    object = JSON.parse(response.to_s)
   end
 end
