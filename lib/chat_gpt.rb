@@ -11,15 +11,19 @@ module OpenAIApiService
       "Acting as a music analyst and expert, give me 5 #{recommendation_type} recommendations that 
     have a similar #{options.join(", ")} as #{query}. Give a two sentence explanation for each recommendation choice."
 
-    response =
-      client.completions(
-        parameters: {
-          model: "text-davinci-003",
-          prompt: prompt,
-          max_tokens: 500
-        }
-      )
+    begin
+      response =
+        client.completions(
+          parameters: {
+            model: "text-davinci-003",
+            prompt: prompt,
+            max_tokens: 500
+          }
+        )
 
-    object = JSON.parse(response.to_s)
+      object = JSON.parse(response.to_s)
+    rescue => exception
+      return nil
+    end
   end
 end
